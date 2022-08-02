@@ -71,7 +71,7 @@ namespace Weapons.Actions
 
         private void Start()
         {
-            // ÀÚ½Ä ¿ÀºêÁ§Æ®°¡ 1¹ø¹«±â, 2¹ø¹«±â, 3¹ø¹«±â ¼ø¼­´ë·Î ¹èÄ¡µÇ¾î ÀÖ´Ù´Â ÀüÁ¦ÇÏ¿¡ ¸¸µé¾îÁø ÄÚµå
+            // ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ç¾ï¿½ ï¿½Ö´Ù´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
             WeaponAction[] childWeaponActions = transform.GetComponentsInChildren<WeaponAction>();
 
             foreach (WeaponAction weaponAction in childWeaponActions)
@@ -89,48 +89,32 @@ namespace Weapons.Actions
                 _weaponIcons[startHandleWeapon].gameObject.SetActive(true);
         }
 
-        // ÁÂÅ¬¸¯ ½Ã ¹ßµ¿µÇ´Â ÇÔ¼ö
+        // ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ßµï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
         public void FireCurrentWeapon()
         {
-            //if (!InteractionManager.Instance.GetGrep()) //..false ÀÌ¸é.....
-            //{
-            //    Debug.Log("±×·¦");
-            //    if (_curWeapon != WeaponEnum.None)
-            //    {
-            //        _messageBroker.OnFire?.Invoke();
-
-            //        _weaponActions[_curWeapon].FireWeapon();
-            //    }
-            //}
-
-            Debug.Log("±×·¦");
-            if (_curWeapon != WeaponEnum.None)
+            if(!InteractionManager.Instance.GetGrep())
             {
-
-                _messageBroker.OnFire?.Invoke();
-
-                _weaponActions[_curWeapon].FireWeapon();
+                if (_curWeapon != WeaponEnum.None)
+                {
+                    _weaponActions[_curWeapon].FireWeapon();
+                }
             }
         }
 
-        // ¿ìÅ¬¸¯ ½Ã ¹ßµ¿µÇ´Â ÇÔ¼ö
+        // ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ßµï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
         public void UseCurrentWeapon()
         {
             if (_curWeapon != WeaponEnum.None)
             {
-                _messageBroker.OnUse?.Invoke();
-
                 _weaponActions[_curWeapon].UseWeapon();
             }
         }
 
-        // RÅ° ´©¸¦½Ã ¹ßµ¿µÇ´Â ÇÔ¼ö
+        // RÅ° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
         public void ResetCurrentWeapon()
         {
             if (_curWeapon != WeaponEnum.None)
             {
-                _messageBroker.OnReset?.Invoke();
-
                 _weaponActions[_curWeapon].ResetWeapon();
 
                 if (_weaponActions[WeaponEnum.Lumo].gameObject.activeSelf)
@@ -138,8 +122,8 @@ namespace Weapons.Actions
 
                 if(_curWeapon == WeaponEnum.Grand)
                 {
-                    // ±×·£µå¿¡ ¹«±â°¡ ºÙ¾îÀÖ´Âµ¥ 
-                    // ±×·£µå¸¦ ¸®¼Â ½ÃÅ°¸é °°ÀÌ ¸®¼Â µÊ
+                    // ï¿½×·ï¿½ï¿½å¿¡ ï¿½ï¿½ï¿½â°¡ ï¿½Ù¾ï¿½ï¿½Ö´Âµï¿½ 
+                    // ï¿½×·ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
                     if (_weaponActions[WeaponEnum.Lumo].GetComponent<Lumo>().SticklyTrm() == _weaponActions[WeaponEnum.Grand].transform)
                     {
                         _weaponActions[WeaponEnum.Lumo].ResetWeapon();
@@ -174,7 +158,7 @@ namespace Weapons.Actions
             }
         }
 
-        // 1,2,3¹ø °°ÀÌ ¼ýÀÚ ´©¸£¸é ¹ßµ¿µÇ´Â ÇÔ¼ö
+        // 1,2,3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
         public void ChangeCurrentWeapon(WeaponEnum weaponEnum)
         {
             foreach (WeaponAction weaponAction in _weaponActions.Values)
