@@ -117,6 +117,5 @@ namespace Objects.Interaction
             onPickup?.Invoke(_currentActiveAtype);
          }
       }
-
    }
 }

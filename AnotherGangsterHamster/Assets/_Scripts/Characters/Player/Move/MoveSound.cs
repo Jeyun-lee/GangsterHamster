@@ -12,15 +12,11 @@ namespace Characters.Player.Move
         private void Start()
         {
             _moveInputHandler = GetComponent<MoveInputHandler>();
-            _moveInputHandler.forward.Execute.AddListener(PlaySound);
-            _moveInputHandler.right.Execute.AddListener(PlaySound);
-            _moveInputHandler.left.Execute.AddListener(PlaySound);
-            _moveInputHandler.backward.Execute.AddListener(PlaySound);
         }
 
         public override void PlaySound(object obj)
         {
-            SoundManager.Instance.Play("PlayerMove");
+
         }
     }
 }

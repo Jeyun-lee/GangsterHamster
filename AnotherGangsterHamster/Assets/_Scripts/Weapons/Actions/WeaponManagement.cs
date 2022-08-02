@@ -92,14 +92,24 @@ namespace Weapons.Actions
         // 좌클릭 시 발동되는 함수
         public void FireCurrentWeapon()
         {
-            if(!InteractionManager.Instance.GetGrep())
-            {
-                if (_curWeapon != WeaponEnum.None)
-                {
-                    _messageBroker.OnFire?.Invoke();
+            //if (!InteractionManager.Instance.GetGrep()) //..false 이면.....
+            //{
+            //    Debug.Log("그랩");
+            //    if (_curWeapon != WeaponEnum.None)
+            //    {
+            //        _messageBroker.OnFire?.Invoke();
 
-                    _weaponActions[_curWeapon].FireWeapon();
-                }
+            //        _weaponActions[_curWeapon].FireWeapon();
+            //    }
+            //}
+
+            Debug.Log("그랩");
+            if (_curWeapon != WeaponEnum.None)
+            {
+
+                _messageBroker.OnFire?.Invoke();
+
+                _weaponActions[_curWeapon].FireWeapon();
             }
         }
 

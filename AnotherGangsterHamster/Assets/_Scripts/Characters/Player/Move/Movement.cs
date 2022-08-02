@@ -24,19 +24,19 @@ namespace Characters.Player.Move
       public void MoveForward()
       {
          if(!PlayerStatus.Moveable) return;
-         _delta.AddZDelta();
+            _delta.AddZDelta();
       }
 
       public void MoveLeft()
       {
          if(!PlayerStatus.Moveable) return;
-         _delta.SubXDelta();
+            _delta.SubXDelta();
       }
 
       public void MoveRight()
       {
          if(!PlayerStatus.Moveable) return;
-         _delta.AddXDelta();
+            _delta.AddXDelta();
       }
 
       private void FixedUpdate() // TODO: 루트모션 넣으면 바꿔야 함

@@ -61,8 +61,12 @@ namespace Characters.Player.Move
          {
             if(Input.GetKey(key))
             {
-               isIdle = false;
+                    PlayerStatus.IsMoving = true;
                _moveCommands[key].Execute.Invoke(null);
+            }
+            else if (Input.GetKeyUp(key))
+            {
+                    PlayerStatus.IsMoving = false;
             }
          }
 

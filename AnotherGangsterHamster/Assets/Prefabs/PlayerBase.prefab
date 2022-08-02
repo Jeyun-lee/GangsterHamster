@@ -442,6 +442,8 @@ GameObject:
   - component: {fileID: 469385357}
   - component: {fileID: 7342391013090847026}
   - component: {fileID: 321845169585716598}
+  - component: {fileID: 631964405269118985}
+  - component: {fileID: 113119257618631685}
   m_Layer: 6
   m_Name: PlayerBase
   m_TagString: PLAYER_BASE
@@ -576,7 +578,19 @@ MonoBehaviour:
   _path: KeyCodes/Movements.json
   OnIdle:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &60493967840551268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +667,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01a282ab0355f25129264834e6d60c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &631964405269118985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60493967840551282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1db240e5ce51945b588c2f8aacd9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &113119257618631685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60493967840551282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343c4bebe22bd1046933abde7fc2f257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4436320642407416676

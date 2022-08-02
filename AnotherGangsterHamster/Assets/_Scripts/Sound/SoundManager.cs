@@ -41,7 +41,7 @@ namespace Sound
       /// 오디오를 플레이 합니다.
       /// </summary>
       /// <param name="name"></param>
-      public void Play(string name)
+      public void Play(string name, bool isLoop = false)
       {
          if(!_audioDictionary.ContainsKey(name))
          {
@@ -55,6 +55,7 @@ namespace Sound
          source.gameObject.SetActive(true);
          source.clip = _audioDictionary[name];
          source.volume = GlobalVolume; // FIXME: TEMP
+         source.loop = isLoop;
          source.Play();
       }
    }

@@ -8,7 +8,7 @@ namespace Characters.Player
       static public bool IsCrouching   = false;
       static public bool OnGround      = true;
 
-      // 플레그 변수
+      // 플레그 변수 
       static public bool Damaged = false;
 
       // 행동 가능 상태 변수

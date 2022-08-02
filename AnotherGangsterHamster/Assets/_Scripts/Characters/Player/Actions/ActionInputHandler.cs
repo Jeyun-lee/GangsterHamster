@@ -73,7 +73,5 @@ namespace Characters.Player.Actions
             interaction.Execute.Invoke(RightHandTrm);
          }
       }
-
    }
-   
 }
